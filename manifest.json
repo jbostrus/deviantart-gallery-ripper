@@ -3,7 +3,7 @@
       "exclude_globs": [ "*://justsitback.deviantart.com/*" ],
       "exclude_matches": [  ],
       "include_globs": [  ],
-      "js": [ "script.js" ],
+      "js": [ "script.user.js" ],
       "matches": [ "*://*.deviantart.com/*", "*://backend.deviantart.com/rss.xml*" ],
       "run_at": "document_idle"
    } ],
