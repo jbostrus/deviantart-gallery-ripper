@@ -1,2 +1,31 @@
 # deviantart-gallery-ripper
 Click button and generate a list of direct image link urls for all images for a users gallery.
+
+# TOC 
+* [Function](#function) - explanation of script
+* [Usage](#usage) - detailed usage example
+* [Known Issues](#known-issues) - list of known problems with script usage
+* [Change Log](#change-log) - details of changes between versions
+
+# Function <a name="function"></a>
+Utility script to assist with downloading mass images from a DeviantArt gallery.
+The script generates a textbox with direct image link urls at the top of a gallery page. Copy and paste the urls into download manager of choice. Tested and works best with [DownThemAll](https://addons.mozilla.org/en-US/firefox/addon/downthemall/) add-on for FireFox. Sample custom filter to select download links `[pre??.deviantart.net/,orig??.deviantart.net/,img??.deviantart.net/]`
+
+# Usage <a name="usage"></a>
+* Open a gallery page on DeviantArt website. There will be a small button under the deviant art logo. Click it to start fetching the image links. 
+  * ![img](https://dl.dropboxusercontent.com/u/29157236/daripper-fast/001%20Start.png)
+* Depending on the number of gallery pages it may take some time to parse it all out.
+  * ![img](https://dl.dropboxusercontent.com/u/29157236/daripper-fast/002%20Polling.png)
+* Once completed there will be a textbox containing a list of direct download links for each of the images.
+  * ![img](https://dl.dropboxusercontent.com/u/29157236/daripper-fast/003%20Success.png)
+* In the case of problems you may get an error list. This is usually because some of the pages had no images associated with it. For example story only posts, PDF, Flash, or SWF pages. You may copy/click the link to open the offending page to review.
+  * ![img](https://dl.dropboxusercontent.com/u/29157236/daripper-fast/004%20Error%20Display.png)
+
+# Known Issues  <a name="known-issues"></a>
+* When browsing a search/gallery and clicking a thumbnail to load full image on HTML5 browsers the GET button disappears. This is because DA hides the panel holding the button. Refreshing the page while viewing the single image will redraw the GET button allowing you to grab all images in the image artist's gallery.
+
+# Change Log <a name="change-log"></a>
+v1.0.18
+* Changed sizing of iframe on chrome
+* Added error page list instead of giving full url count and misrepresenting what's there.
+* Fixed bug causing duplicate urls in cases where some pages did not have images.
