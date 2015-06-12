@@ -1,0 +1,16 @@
+{
+   "content_scripts": [ {
+      "exclude_globs": [ "*://justsitback.deviantart.com/*" ],
+      "exclude_matches": [  ],
+      "include_globs": [  ],
+      "js": [ "script.js" ],
+      "matches": [ "*://*.deviantart.com/*", "*://backend.deviantart.com/rss.xml*" ],
+      "run_at": "document_idle"
+   } ],
+   "converted_from_user_script": true,
+   "description": "Click button and generate a list of direct image link urls for all images for a users gallery.",
+   "key": "ojiME9tIMg1o+bIPRhsH7Ea9+g9gAnzoRf23jaxkVh0=",
+   "name": "(dm) Deviant Art Gallery Ripper",
+   "version": "1.0.18",
+   "manifest_version": 2
+}
