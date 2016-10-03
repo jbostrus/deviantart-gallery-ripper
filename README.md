@@ -7,7 +7,7 @@ Click button and generate a list of direct image link urls for all images for a 
 * [Known Issues](#known-issues) - list of known problems with script usage
 * [Change Log](#change-log) - details of changes between versions
 
-# Function <a name="function"></a>
+# Function
 Utility script to assist with downloading mass images from a DeviantArt gallery.
 The script generates a textbox with direct image link urls at the top of a gallery page. Copy and paste the urls into download manager of choice. Tested and works best with [DownThemAll](https://addons.mozilla.org/en-US/firefox/addon/downthemall/) add-on for FireFox. Sample custom filter to select download links `[pre??.deviantart.net/,orig??.deviantart.net/,img??.deviantart.net/]`
 
