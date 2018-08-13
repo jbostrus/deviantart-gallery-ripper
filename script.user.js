@@ -2,8 +2,8 @@
 // @name           (dm) Deviant Art Gallery Ripper
 // @namespace      DeviantRipper
 // @description    Click button and generate a list of direct image link urls for all images for a users gallery.
-// @version        1.0.18
-// @lastupdated    2015-06-11
+// @version        1.0.19
+// @lastupdated    2018-08-13
 // @match          *://*.deviantart.com/*
 // @match          *://backend.deviantart.com/rss.xml*
 // @exclude        *://justsitback.deviantart.com/*
@@ -465,6 +465,7 @@ var deviantRipper = {
 
             document.body.insertBefore(deviantRipper.pages.urlTextBox,
                 document.body.firstChild);
+            deviantRipper.pages.urlTextBox.select();
 
             deviantRipper.pages.fetchStatus = 4;
         },
