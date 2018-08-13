@@ -2,7 +2,7 @@
 // @name           (dm) Deviant Art Gallery Ripper
 // @namespace      DeviantRipper
 // @description    Click button and generate a list of direct image link urls for all images for a users gallery.
-// @version        1.0.19
+// @version        1.0.20
 // @lastupdated    2018-08-13
 // @match          *://*.deviantart.com/*
 // @match          *://backend.deviantart.com/rss.xml*
@@ -460,6 +460,7 @@ var deviantRipper = {
             deviantRipper.pages.urlTextBox =
                 document.createElementNS(docNamespace, "textarea");
             deviantRipper.pages.urlTextBox.style.width = '100%';
+            deviantRipper.pages.urlTextBox.style.height = '150px';
 			deviantRipper.pages.urlTextBox.innerHTML =
                 deviantRipper.pages.urls.join('\n');
 
@@ -485,6 +486,11 @@ var deviantRipper = {
                 deviantRipper.useGMxml = true;
             }
             
+            // Ignore page list
+            if (/deviantart.com\/*.+\/art\//i.test(location.href))
+                return;
+
+
             if (/backend/i.test(location.hostname) === true) { 
                 if (/rss\.xml/i.test(location.href) === true) {
                     // test if we're in iframe if not then get out
@@ -822,24 +828,13 @@ var deviantRipper = {
                 var replacedRootNode = document.createElement('clearinghouse');
                 
                 // empty out the current document view.
-                if (deviantRipper.isChrome === true) {
-                    while (document.documentElement.firstChild) {
-                        replacedRootNode.appendChild(
-                            document.documentElement.firstChild
-                        );
-                    }
-                } else if (deviantRipper.isFireFox === true) {
-                    while (document.body.firstChild) {
-                        replacedRootNode.appendChild(
-                            document.body.firstChild
-                        );
-                    }
-                }
-
-                if (document.body === null) {
-                    document.body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body'); 
-                    document.documentElement.appendChild(document.body);
-                }
+                document.removeChild(document.firstChild)
+                
+                var body = document.createElementNS(docNamespace, "body")
+                var html = document.createElementNS(docNamespace, "html");
+                html.appendChild(document.createElementNS(docNamespace, "head"));
+                html.appendChild(body);
+                document.appendChild(html);
 
                 new_button = document.createElementNS(docNamespace, 'input');
                 new_button.type = "button";
