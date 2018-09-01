@@ -27,6 +27,7 @@ The script generates a textbox with direct image link urls at the top of a galle
 # Change Log
 v1.0.19
 * user contribution: Added automatic text box selection when finished.
+
 v1.0.20
 * Extended textbox of urls to fill the frame when completed.
 * Added ignore code so it won't draw the download button on some pages where it cannot get a gallery list.
